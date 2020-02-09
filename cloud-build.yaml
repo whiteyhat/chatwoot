@@ -2,9 +2,8 @@ steps:
   # Get .env file from secrets
   - name: gcr.io/cloud-builders/gcloud
     id: 'Getting the env file from secrets'
-    args: ["beta", "secrets", "versions", 
-           "access", "latest","--keyring=CHATWOOT_PROD", 
-          "> .env"]
+    entrypoint: /bin/bash
+    args: ['-c', 'gcloud beta secrets versions access latest --secret="CHATWOOT_PROD" > .env_test']
 
   # add --promote argument if you want to deploy to the latest version
   - name: gcr.io/cloud-builders/gcloud
