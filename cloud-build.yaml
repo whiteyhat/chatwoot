@@ -5,7 +5,7 @@ steps:
     entrypoint: /bin/bash
     args: ['-c', 'gcloud beta secrets versions access latest --secret="CHATWOOT_PROD" > .env_test']
     env:
-      -'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
+      - 'CLOUDSDK_CORE_DISABLE_PROMPTS=1'
 
   # add --promote argument if you want to deploy to the latest version
   - name: gcr.io/cloud-builders/gcloud
