@@ -1,6 +1,6 @@
 steps:
   - name: gcr.io/cloud-builders/gcloud
-    id: 'Getting the env file from secrets'
+    id: 'Update to use beta commands'
     entrypoint: /bin/bash
     args: ['components', 'update']
 
