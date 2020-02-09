@@ -27,6 +27,8 @@ gem 'aws-sdk-s3', require: false
 gem 'azure-storage', require: false
 gem 'google-cloud-storage', require: false
 gem 'mini_magick'
+gem "appengine", "~> 0.5.0"
+
 
 ##-- gems for database --#
 gem 'pg'
@@ -105,3 +107,4 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen'
 end
+

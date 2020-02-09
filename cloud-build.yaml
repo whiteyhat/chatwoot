@@ -1,0 +1,14 @@
+steps:
+  # Get .env file from secrets
+  - name: gcr.io/cloud-builders/gcloud
+    id: 'Getting the env file from secrets'
+    args: ["beta", "secrets", "versions", 
+           "access", "latest","--keyring=CHATWOOT_PROD", 
+          "> .env"]
+
+  # add --promote argument if you want to deploy to the latest version
+  - name: gcr.io/cloud-builders/gcloud
+    id: 'Deploy to App Engine'
+    args: [ app, deploy ]
+
+timeout: 1500s
